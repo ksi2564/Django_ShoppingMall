@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 {% block contents %}
-Hello World!
-{{ email }}
+<div class="nav justify-content-end mt-3">
+    {% if not email %}
+    <li class="nav-item mr-2">
+        <a href="/login" class="btn btn-primary" role="button" aria-pressed="true">로그인</a>
+    </li>
+    <li class="nav-item mr-2">
+        <a href="/register" class="btn btn-primary" role="button" aria-pressed="true">회원가입</a>
+    </li>
+    {% else %}
+    어서오세요 {{ email }} 님
+    <li class="nav-item mx-2">
+        <a href="/logout" class="btn btn-primary" role="button" aria-pressed="true">로그아웃</a>
+    </li>
+    {% endif %}
+</div>
+<div class="nav mt-3">
+    <li class="nav-item mr-2">
+        <a href="/product" class="btn btn-primary" role="button" aria-pressed="true">상품 보러가기</a>
+    </li>
+    <li class="nav-item mr-2">
+        <a href="/order" class="btn btn-primary" role="button" aria-pressed="true">내 주문보기</a>
+    </li>
+</div>
 {% endblock %}
